@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>tables</title>
+	</head>
+	<body>
+		<button onclick="table()">
+			print
+		</button>
+		<p id="abc" style="height:30px; width:40px;">0</p>
+		<script>
+			let a=1;
+			let b=1;
+			
+				function table(){	
+					document.getElementById('abc').innerHTML=a*b;
+					b++;
+					
+					if (b>10){
+						b=1;
+						if(a==1);
+							a++;
+					}
+				}
+		</script>
+	</body>
+</html>
