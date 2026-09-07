@@ -1,27 +1,109 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 	<head>
-		<title>tables</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Multiplication Table Generator</title>
+		<style>
+			:root {
+				--primary: #4f46e5;
+				--primary-hover: #4338ca;
+				--bg-gradient: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+				--card-bg: #ffffff;
+				--text-main: #1f2937;
+				--text-muted: #6b7280;
+			}
+
+			body {
+				font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+				background: var(--bg-gradient);
+				height: 100vh;
+				margin: 0;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				color: var(--text-main);
+			}
+
+			.card {
+				background: var(--card-bg);
+				padding: 2.5rem;
+				border-radius: 16px;
+				box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+				text-align: center;
+				width: 280px;
+				transition: transform 0.2s ease;
+			}
+
+			.card:hover {
+				transform: translateY(-4px);
+			}
+
+			h2 {
+				margin-top: 0;
+				margin-bottom: 1.5rem;
+				font-size: 1.25rem;
+				color: var(--text-main);
+			}
+
+			#abc {
+				font-size: 3rem;
+				font-weight: 700;
+				color: var(--primary);
+				margin: 1.5rem 0;
+				height: auto;
+				width: 100%;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+
+			button {
+				background-color: var(--primary);
+				color: white;
+				border: none;
+				padding: 0.75rem 1.5rem;
+				font-size: 1rem;
+				font-weight: 600;
+				border-radius: 8px;
+				cursor: pointer;
+				width: 100%;
+				transition: background-color 0.2s ease, box-shadow 0.2s ease;
+				box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+			}
+
+			button:hover {
+				background-color: var(--primary-hover);
+			}
+
+			button:active {
+				transform: scale(0.98);
+			}
+		</style>
 	</head>
 	<body>
-		<button onclick="table()">
-			print
-		</button>
-		<p id="abc" style="height:30px; width:40px;">0</p>
+
+		<div class="card">
+			<h2>Table Generator</h2>
+			<div id="abc">0</div>
+			<button onclick="table()">Next Value</button>
+		</div>
+
 		<script>
-			let a=1;
-			let b=1;
+			let a = 1;
+			let b = 1;
 			
-				function table(){	
-					document.getElementById('abc').innerHTML=a*b;
-					b++;
-					
-					if (b>10){
-						b=1;
-						if(a==1);
-							a++;
+			function table() {    
+				document.getElementById('abc').innerHTML = a * b;
+				b++;
+				
+				if (b > 10) {
+					b = 1;
+					if (a == 1) {
+						a++;
 					}
 				}
+			}
 		</script>
 	</body>
 </html>
